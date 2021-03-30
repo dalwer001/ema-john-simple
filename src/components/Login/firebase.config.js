@@ -1,9 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBuX2no4ao27N-XmMuCrMW4fVbJonD29jY",
-    authDomain: "ema-john-simple-d59d9.firebaseapp.com",
-    projectId: "ema-john-simple-d59d9",
-    storageBucket: "ema-john-simple-d59d9.appspot.com",
-    messagingSenderId: "1027325755588",
-    appId: "1:1027325755588:web:728a6015e55bea49044991"
+    apiKey: "AIzaSyBZscc_o5mPIgof580NcbPV6JkPpvojvSw",
+    authDomain: "react-auth-11c55.firebaseapp.com",
+    projectId: "react-auth-11c55",
+    storageBucket: "react-auth-11c55.appspot.com",
+    messagingSenderId: "39433077112",
+    appId: "1:39433077112:web:da96de246ac81c065fc88d"
 };
 export default firebaseConfig;
