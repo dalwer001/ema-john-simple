@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { UserContext } from '../../App';
+import { getDatabaseCart, processOrder } from '../../utilities/databaseManager';
 import "./Shipment.css";
 
 
@@ -10,9 +11,22 @@ const Shipment = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
 const onSubmit = data => {
-
+    const savedCart = getDatabaseCart();
     console.log('form submitted', data);
+    const orderDetails  = {...loggedInUser,product:savedCart, shipment:data , orderTime: new Date()}
 
+    fetch('https://floating-retreat-40018.herokuapp.com/addORder',{
+        method:"post",
+        headers:{"Content-Type": "application/json"},
+        body:JSON.stringify(orderDetails)
+    })
+    .then(res=>res.json())
+    .then(data => {
+        if(data){
+            processOrder();
+            alert('your order placed successfully');
+        }
+    })
 };
 
 console.log(watch("example"));

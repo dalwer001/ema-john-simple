@@ -10,6 +10,7 @@ import { createUserWithEmailAndPassword, handleFBSignIn, handleGoogleSignIn, han
 
 
 function Login() {
+
     const [newUser, setNewUser] = useState(false);
     const [user, setUser] = useState({
         isSignedIn: false,
@@ -47,7 +48,7 @@ function Login() {
     const signOut = () => {
         handleSignOut()
             .then(res => {
-               handleResponse(res,false);
+            handleResponse(res,false);
             })
     }
 
